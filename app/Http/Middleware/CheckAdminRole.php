@@ -17,8 +17,8 @@ class CheckAdminRole
     public function handle(Request $request, Closure $next): Response
     {
         if ($request->user()?->role !== 'admin') {
-        abort(403, 'Halaman ini hanya bisa diakses oleh admin.');
-        }
+            abort(403, 'Halaman ini hanya bisa diakses oleh admin.');
+            }
         return $next($request);
     }
 }
